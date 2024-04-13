@@ -172,12 +172,21 @@ if (!customElements.get('product-form')) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  // Reset dropdown
+  // Uncheck dropdown
   document.querySelector(".select__select").selectedIndex = 0;
-  
+
   // Uncheck radio button
   var radios = document.querySelectorAll('input[type="radio"]');
   radios.forEach(radio => {
     radio.checked = false;
   });
+
+  // Hiding Unneccessary Thumbnail
+  var ulElement = document.querySelector('.ul_parent');
+  if (ulElement) {
+    var thumbnail = ulElement.querySelector('li:nth-child(2)');
+    if (thumbnail) {
+      thumbnail.style.display = 'none';
+    }
+  }
 });
