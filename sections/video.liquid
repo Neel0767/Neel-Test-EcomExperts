@@ -88,12 +88,12 @@
         style="--ratio-percent: {{ 1 | divided_by: poster.aspect_ratio | times: 100 }}%;"
       {% endif %}
     >
-      <button
+      {% comment %} <button
         id="Deferred-Poster-Modal-{{ video_id }}"
         class="video-section__poster media deferred-media__poster media--landscape"
         type="button"
         aria-label="{{ alt }}"
-      >
+      > {% endcomment %}
         {%- if poster != null -%}
           {{
             poster
